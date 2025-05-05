@@ -1,0 +1,9 @@
+[package]
+name = "ephemera_mapping"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.12.15", features = ["json", "blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
