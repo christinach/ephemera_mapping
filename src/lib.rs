@@ -14,7 +14,14 @@ pub struct Item {
 
 #[derive(Deserialize, Debug)]
 pub struct Attributes {
-    pub title: String,
+    #[serde(rename = "sort_title")]
+    pub title_sort: String,
+    // alternative -> other_title_display
+    #[serde(rename = "transliterated_title")]
+    pub other_title_display: Vec<String>,
+    // creator -> author_display, author, author_s, author_sort, author_roles_1display, author_citation_display
+    #[serde(rename = "creator")]
+    creator: Vec<String>,
 }
 
 pub struct CatalogClient {
